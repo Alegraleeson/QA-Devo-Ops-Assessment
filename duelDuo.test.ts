@@ -27,7 +27,7 @@ test(' clicking Draw button displays choices div ', async () => {
     expect(displayed).toBe(true)
 })
 
-test('clicking Draw button displays player duo div', async () => {
+test('clicking Add to duo button displays player duo div', async () => {
     await driver.findElement(By.id('draw')).click()
     await driver.sleep(2000)
     await driver.findElement(By.css('.bot-btn')).click()
