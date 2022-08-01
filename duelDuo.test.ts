@@ -19,18 +19,23 @@ test('Title shows up when page loads', async () => {
     expect(displayed).toBe(true)
 })
 
-test(' clicking Draw button displays div ', async () => {
+test(' clicking Draw button displays choices div ', async () => {
+    await driver.findElement(By.id('draw')).click()
+    await driver.sleep(2000)
     const choices = await driver.findElement(By.id('choices'))
     const displayed = await choices.isDisplayed();
-    await driver.findElement(By.id('draw')).click()
     expect(displayed).toBe(true)
 })
 
-test(' clicking Draw button displays div ', async () => {
+test('clicking Draw button displays player duo div', async () => {
+    await driver.findElement(By.id('draw')).click()
+    await driver.sleep(2000)
+    await driver.findElement(By.css('.bot-btn')).click()
+    await driver.sleep(2000)
     const duo = await driver.findElement(By.id('player-duo'))
     const displayed = await duo.isDisplayed();
-    await driver.findElement(By.id('draw')).click()
-    await driver.findElement(By.xpath('//*[text()="Add to Duo"]')).click()
+    
+    
     expect(displayed).toBe(true)
 })
 
